@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,12 +11,23 @@ import Footer from './components/Footer';
 const App: React.FC = () => {
   const [showMascot, setShowMascot] = useState<boolean>(() => {
     const saved = localStorage.getItem('mascot_enabled');
-    return saved === null ? true : saved === 'true';
+    // Changed default to false (off) on page load
+    return saved === null ? false : saved === 'true';
   });
+
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('mascot_enabled', showMascot.toString());
   }, [showMascot]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 800);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen selection:bg-indigo-600 selection:text-white overflow-x-hidden bg-[#030712] grid-bg">
@@ -28,21 +40,35 @@ const App: React.FC = () => {
       
       {showMascot && <Mascot />}
 
-      {/* Mascot Toggle Button */}
-      <button 
-        onClick={() => setShowMascot(!showMascot)}
-        className="fixed bottom-6 right-6 z-[10000] p-3 rounded-full glass-card border border-white/10 hover:border-indigo-500/50 hover:bg-white/5 transition-all group shadow-2xl flex items-center gap-3 pr-5"
-        title={showMascot ? "Disable Mascots" : "Enable Mascots"}
-      >
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${showMascot ? 'bg-indigo-600 text-white' : 'bg-white/10 text-slate-400'}`}>
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      {/* Control Panel Floating */}
+      <div className="fixed bottom-6 right-6 z-[10000] flex flex-col items-end gap-3">
+        {/* Back to Top */}
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className={`p-4 rounded-full glass-card border border-white/10 hover:border-indigo-500/50 hover:bg-white/5 transition-all shadow-2xl ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'} pointer-events-auto`}
+          title="Back to Top"
+        >
+          <svg className="w-5 h-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
           </svg>
-        </div>
-        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">
-          {showMascot ? 'Mascot On' : 'Mascot Off'}
-        </span>
-      </button>
+        </button>
+
+        {/* Mascot Toggle Button */}
+        <button 
+          onClick={() => setShowMascot(!showMascot)}
+          className="p-3 rounded-full glass-card border border-white/10 hover:border-indigo-500/50 hover:bg-white/5 transition-all group shadow-2xl flex items-center gap-3 pr-5 pointer-events-auto"
+          title={showMascot ? "Dismiss the kittens" : "Play with cats"}
+        >
+          <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${showMascot ? 'bg-indigo-600 text-white' : 'bg-white/10 text-slate-400'}`}>
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">
+            {showMascot ? 'Dismiss' : 'Play with cats'}
+          </span>
+        </button>
+      </div>
 
       <main>
         <Hero />
