@@ -3,140 +3,114 @@ import { Project, Skill, Experience } from './types';
 
 export const PROJECTS: Project[] = [
   {
-    title: "Enterprise Systems Dashboard",
-    description: "A high-performance Angular 18 management system optimized for real-time data visualization and telemetry tracking using reactive primitives.",
-    tech: ["Angular", "RxJS", "Signals", "Tailwind"],
-    image: "https://picsum.photos/seed/tech-grid/800/600",
+    title: "Health Gates",
+    description: "Enterprise hospital and pharmacy management system enabling patient history tracking and secure medicine disbursal. Focused on operational reliability and reducing manual coordination.",
+    tech: ["Angular", "RxJS", ".NET", "REST API"],
+    image: "https://picsum.photos/seed/health-gates/800/600",
     link: "#"
   },
   {
-    title: "Global E-commerce Infrastructure",
-    description: "Enterprise-scale e-commerce solution featuring advanced server-side rendering (SSR) and optimized core web vitals for global markets.",
-    tech: ["Angular", "NGRX", "SSR", "Stripe"],
-    image: "https://picsum.photos/seed/tech-shop/800/600",
+    title: "Quark AI",
+    description: "Advanced billing correction workflow system integrated with Python-based APIs. Automated complex manual review processes using specialized Angular UI components.",
+    tech: ["Angular", "AI Integration", "SCSS", "Python API"],
+    image: "https://picsum.photos/seed/quark-ai/800/600",
     link: "#"
   },
   {
-    title: "Real-time Communication Nexus",
-    description: "Low-latency collaborative platform utilizing WebSockets and reactive state management for high-concurrency data synchronization.",
-    tech: ["Angular", "Firebase", "WebSockets"],
-    image: "https://picsum.photos/seed/tech-chat/800/600",
+    title: "Loan Management System",
+    description: "Streamlined lead management and customer onboarding modules for financial services, significantly reducing loan processing turnaround time.",
+    tech: ["Angular", "Reactive Forms", "VAPT", "Angular Material"],
+    image: "https://picsum.photos/seed/loan-system/800/600",
     link: "#"
   }
 ];
 
 export const SKILLS: Skill[] = [
   // Core Engineering
-  { name: 'Angular 18+', level: 100, category: 'core' },
+  { name: 'Angular v8–v18', level: 100, category: 'core' },
   { name: 'TypeScript', level: 100, category: 'core' },
   { name: 'RxJS', level: 100, category: 'core' },
-  { name: 'Angular Signals', level: 100, category: 'core' },
-  { name: 'Standalone Components', level: 100, category: 'core' },
-  { name: 'Control Flow Syntax', level: 100, category: 'core' },
-  { name: 'Custom Directives', level: 100, category: 'core' },
-  { name: 'Advanced Dependency Injection', level: 100, category: 'core' },
-  { name: 'Zone.js Optimization', level: 100, category: 'core' },
-  { name: 'Change Detection Strategies', level: 100, category: 'core' },
-  { name: 'Angular Elements', level: 100, category: 'core' },
+  { name: 'JavaScript (ES6+)', level: 100, category: 'core' },
+  { name: 'HTML5/CSS3', level: 100, category: 'core' },
+  { name: 'SCSS', level: 100, category: 'core' },
   
-  // State Management
-  { name: 'NgRx Store/Effects', level: 100, category: 'state' },
-  { name: 'NgRx Component Store', level: 100, category: 'state' },
-  { name: 'NgRx Signal Store', level: 100, category: 'state' },
-  { name: 'Akita', level: 100, category: 'state' },
-  { name: 'NGXS', level: 100, category: 'state' },
-  { name: 'Reactive Primitives', level: 100, category: 'state' },
+  // Angular Architecture
+  { name: 'Reactive Forms', level: 100, category: 'state' },
+  { name: 'Dependency Injection', level: 100, category: 'state' },
+  { name: 'Routing & Guards', level: 100, category: 'state' },
+  { name: 'Interceptors', level: 100, category: 'state' },
+  { name: 'State Management', level: 100, category: 'state' },
+  { name: 'Change Detection Opt.', level: 100, category: 'state' },
 
-  // Quality & Testing
-  { name: 'Cypress E2E', level: 100, category: 'testing' },
-  { name: 'Playwright', level: 100, category: 'testing' },
-  { name: 'Jest', level: 100, category: 'testing' },
-  { name: 'Karma & Jasmine', level: 100, category: 'testing' },
-  { name: 'Angular Testing Library', level: 100, category: 'testing' },
-  { name: 'Spectator', level: 100, category: 'testing' },
-  { name: 'Lighthouse Performance', level: 100, category: 'testing' },
+  // UI Frameworks & Quality
+  { name: 'Angular Material', level: 100, category: 'testing' },
+  { name: 'PrimeNG', level: 100, category: 'testing' },
+  { name: 'Bootstrap', level: 100, category: 'testing' },
+  { name: 'Unit Testing', level: 100, category: 'testing' },
+  { name: 'Security (VAPT)', level: 100, category: 'testing' },
+  { name: 'Bundle Optimization', level: 100, category: 'testing' },
 
-  // Ecosystem & Tooling
-  { name: 'NX Monorepos', level: 100, category: 'other' },
-  { name: 'Module Federation', level: 100, category: 'other' },
-  { name: 'Micro-frontends', level: 100, category: 'other' },
-  { name: 'Docker & Kubernetes', level: 100, category: 'other' },
-  { name: 'CI/CD (GitHub Actions)', level: 100, category: 'other' },
-  { name: 'Tailwind CSS', level: 100, category: 'other' },
-  { name: 'SCSS / SASS', level: 100, category: 'other' },
-  { name: 'Angular Universal (SSR)', level: 100, category: 'other' },
-  { name: 'Analog.js', level: 100, category: 'other' },
-  { name: 'Webpack / Vite', level: 100, category: 'other' },
-  { name: 'Compodoc', level: 100, category: 'other' }
+  // Tools & Platforms
+  { name: 'MetaGPT X', level: 100, category: 'other' },
+  { name: 'Figma Make', level: 100, category: 'other' },
+  { name: 'Git/GitHub/GitLab', level: 100, category: 'other' },
+  { name: 'Postman', level: 100, category: 'other' },
+  { name: 'Chrome DevTools', level: 100, category: 'other' },
+  { name: 'Burp Suite', level: 100, category: 'other' }
 ];
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Global Tech Solutions",
-    role: "Lead Frontend Architect",
-    period: "2021 - Present",
+    company: "Legal Solutions Group",
+    role: "Software Engineer",
+    period: "APR 2024 – JAN 2026",
     highlights: [
-      "Optimized enterprise change detection strategies, resulting in a 30% performance increase for data-heavy views.",
-      "Led the migration of legacy monolithic applications to a modular NX workspace architecture.",
-      "Established standard UI/UX patterns and component libraries used across multiple global product teams."
+      "Collaborated with cross-functional teams to develop and maintain enterprise-scale web applications using Angular and .NET.",
+      "Leveraged advanced UI prototyping with MetaGPT X and Figma Make to accelerate frontend development.",
+      "Maintained high standards of code quality, scalability, and optimized rendering for large data-driven systems."
     ],
     projects: [
       {
-        name: "Enterprise Grid System",
-        description: "High-throughput data grid for managing multi-region cloud resources with real-time updates.",
-        tech: ["Angular 18", "Signals", "SCSS", "RxJS"]
+        name: "Health Gates",
+        description: "Hospital & pharmacy management system with patient history tracking and secure medicine disbursal.",
+        tech: ["Angular", ".NET", "SQL Server"]
       },
       {
-        name: "Core Design System",
-        description: "Centralized UI library serving 15+ internal platforms with WCAG 2.1 AA compliance.",
-        tech: ["NX", "Storybook", "Tailwind", "Angular Elements"]
+        name: "Quark AI",
+        description: "Automated billing correction workflows integrated with Python-based APIs.",
+        tech: ["Angular", "Python", "REST"]
       },
       {
-        name: "Inventory Command Center",
-        description: "Global logistics portal with predictive search and complex state management.",
-        tech: ["NgRx", "Module Federation", "Web Workers"]
+        name: "MyPetsQR",
+        description: "QR-enabled pet health platform for secure access to medical records and vaccination history.",
+        tech: ["Angular", "QR Integration", "Responsive UI"]
       },
       {
-        name: "Telemetry Visualizer",
-        description: "Real-time engine performance tracker utilizing Canvas and Angular optimized change detection.",
-        tech: ["Angular", "D3.js", "WebSockets"]
-      },
-      {
-        name: "Self-Service Cloud Portal",
-        description: "Multi-tenant orchestration layer for rapid cloud environment provisioning.",
-        tech: ["Angular", "Cypress", "OpenAPI"]
+        name: "Bilr",
+        description: "Globalization of .NET MVC application with multi-language support.",
+        tech: [".NET MVC", "i18n", "C#"]
       }
     ]
   },
   {
-    company: "Signal Flow Analytics",
-    role: "Senior Frontend Engineer",
-    period: "2018 - 2021",
+    company: "Manappuram Comptech and Consultants Ltd.",
+    role: "Angular Developer",
+    period: "SEP 2021 – JAN 2024",
     highlights: [
-      "Architected reactive state management solutions handling real-time high-velocity data streams.",
-      "Implemented advanced lazy loading and tree-shaking techniques, reducing initial bundle sizes by 40%.",
-      "Directed the frontend implementation of highly accessible user interfaces following WCAG 2.1 guidelines."
+      "Designed and developed modern Angular applications using reusable modules and component-driven architecture.",
+      "Performed Angular version upgrades (v10–v16) and resolved VAPT findings for enhanced security.",
+      "Improved application stability and performance through rendering optimization and change detection strategies."
     ],
     projects: [
       {
-        name: "Live Analytics Hub",
-        description: "Dashboard for visualizing gigabytes of incoming logs in real-time.",
-        tech: ["RxJS", "Angular Material", "WebSockets"]
+        name: "Loan Management System",
+        description: "Lead management and customer onboarding modules reducing turnaround time.",
+        tech: ["Angular", "Reactive Forms", "Material"]
       },
       {
-        name: "E-commerce Optimization",
-        description: "SEO-focused migration to Angular Universal increasing conversion rates by 12%.",
-        tech: ["Angular Universal", "SSR", "V8 Optimization"]
-      },
-      {
-        name: "Customer Loyalty Engine",
-        description: "Gamified reward system with offline capability and service worker synchronization.",
-        tech: ["PWA", "Firebase", "Angular Service Workers"]
-      },
-      {
-        name: "Financial Data Pipeline",
-        description: "Secure, high-integrity financial report generator with complex validation logic.",
-        tech: ["Reactive Forms", "NgRx Store", "Jest"]
+        name: "Smart Form Builder",
+        description: "Configurable, dynamic form builder for non-technical teams.",
+        tech: ["Angular", "Dynamic Forms", "Metadata-driven UI"]
       }
     ]
   }

@@ -40,8 +40,8 @@ const Navbar: React.FC = () => {
       <nav className="fixed top-0 left-0 w-full z-[100] bg-[#030712]/60 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#hero" className="text-xl font-bold flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-black transition-transform group-hover:rotate-12">A</div>
-            <span className="tracking-tight heading-font text-white">ALEX<span className="text-indigo-500">DEV</span></span>
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-black transition-transform group-hover:rotate-12">G</div>
+            <span className="tracking-tight heading-font text-white uppercase">GARRY<span className="text-indigo-500">DAVID</span></span>
           </a>
 
           {/* Desktop Links */}

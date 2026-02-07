@@ -11,17 +11,16 @@ const Hero: React.FC = () => {
       <div className="text-center px-6 z-10 max-w-5xl">
         <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono">
           <span className="w-2 h-2 bg-indigo-500 rounded-full animate-ping"></span>
-          Senior Angular Architect & Engineer
+          Senior Frontend Engineer | Angular Expert
         </div>
         
         <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter text-white leading-[1.05] heading-font">
-          Engineering <br />
-          <span className="gradient-text">Scalable Precision.</span>
+          Garry David <br />
+          <span className="gradient-text">Angular Architect.</span>
         </h1>
         
         <p className="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed mb-12 font-light">
-          Crafting high-performance enterprise systems with Angular 18+, 
-          reactive architecture, and mission-critical reliability.
+          Senior Frontend Engineer with 4.5 years of specialized experience in Angular (v8–v18) and reactive web architectures. Committed to pixel-perfect, accessible, and secure enterprise applications.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
