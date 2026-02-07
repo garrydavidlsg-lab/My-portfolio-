@@ -26,14 +26,48 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'Angular Architecture', level: 98, category: 'core' },
-  { name: 'Reactive Programming', level: 92, category: 'core' },
-  { name: 'Signals & State', level: 90, category: 'core' },
-  { name: 'NGRX / Redux', level: 88, category: 'state' },
-  { name: 'Automated Testing', level: 85, category: 'testing' },
-  { name: 'CI/CD Pipelines', level: 82, category: 'other' },
-  { name: 'TypeScript', level: 95, category: 'core' },
-  { name: 'NX Monorepos', level: 85, category: 'other' }
+  // Core Engineering
+  { name: 'Angular 18+', level: 100, category: 'core' },
+  { name: 'TypeScript', level: 100, category: 'core' },
+  { name: 'RxJS', level: 100, category: 'core' },
+  { name: 'Angular Signals', level: 100, category: 'core' },
+  { name: 'Standalone Components', level: 100, category: 'core' },
+  { name: 'Control Flow Syntax', level: 100, category: 'core' },
+  { name: 'Custom Directives', level: 100, category: 'core' },
+  { name: 'Advanced Dependency Injection', level: 100, category: 'core' },
+  { name: 'Zone.js Optimization', level: 100, category: 'core' },
+  { name: 'Change Detection Strategies', level: 100, category: 'core' },
+  { name: 'Angular Elements', level: 100, category: 'core' },
+  
+  // State Management
+  { name: 'NgRx Store/Effects', level: 100, category: 'state' },
+  { name: 'NgRx Component Store', level: 100, category: 'state' },
+  { name: 'NgRx Signal Store', level: 100, category: 'state' },
+  { name: 'Akita', level: 100, category: 'state' },
+  { name: 'NGXS', level: 100, category: 'state' },
+  { name: 'Reactive Primitives', level: 100, category: 'state' },
+
+  // Quality & Testing
+  { name: 'Cypress E2E', level: 100, category: 'testing' },
+  { name: 'Playwright', level: 100, category: 'testing' },
+  { name: 'Jest', level: 100, category: 'testing' },
+  { name: 'Karma & Jasmine', level: 100, category: 'testing' },
+  { name: 'Angular Testing Library', level: 100, category: 'testing' },
+  { name: 'Spectator', level: 100, category: 'testing' },
+  { name: 'Lighthouse Performance', level: 100, category: 'testing' },
+
+  // Ecosystem & Tooling
+  { name: 'NX Monorepos', level: 100, category: 'other' },
+  { name: 'Module Federation', level: 100, category: 'other' },
+  { name: 'Micro-frontends', level: 100, category: 'other' },
+  { name: 'Docker & Kubernetes', level: 100, category: 'other' },
+  { name: 'CI/CD (GitHub Actions)', level: 100, category: 'other' },
+  { name: 'Tailwind CSS', level: 100, category: 'other' },
+  { name: 'SCSS / SASS', level: 100, category: 'other' },
+  { name: 'Angular Universal (SSR)', level: 100, category: 'other' },
+  { name: 'Analog.js', level: 100, category: 'other' },
+  { name: 'Webpack / Vite', level: 100, category: 'other' },
+  { name: 'Compodoc', level: 100, category: 'other' }
 ];
 
 export const EXPERIENCES: Experience[] = [
@@ -49,13 +83,28 @@ export const EXPERIENCES: Experience[] = [
     projects: [
       {
         name: "Enterprise Grid System",
-        description: "High-throughput data grid for managing multi-region cloud resources.",
-        tech: ["Angular 18", "Signals", "SCSS"]
+        description: "High-throughput data grid for managing multi-region cloud resources with real-time updates.",
+        tech: ["Angular 18", "Signals", "SCSS", "RxJS"]
       },
       {
-        name: "Core Component Library",
-        description: "Standardized Design System implemented across 10+ internal platforms.",
-        tech: ["NX", "Storybook", "Tailwind"]
+        name: "Core Design System",
+        description: "Centralized UI library serving 15+ internal platforms with WCAG 2.1 AA compliance.",
+        tech: ["NX", "Storybook", "Tailwind", "Angular Elements"]
+      },
+      {
+        name: "Inventory Command Center",
+        description: "Global logistics portal with predictive search and complex state management.",
+        tech: ["NgRx", "Module Federation", "Web Workers"]
+      },
+      {
+        name: "Telemetry Visualizer",
+        description: "Real-time engine performance tracker utilizing Canvas and Angular optimized change detection.",
+        tech: ["Angular", "D3.js", "WebSockets"]
+      },
+      {
+        name: "Self-Service Cloud Portal",
+        description: "Multi-tenant orchestration layer for rapid cloud environment provisioning.",
+        tech: ["Angular", "Cypress", "OpenAPI"]
       }
     ]
   },
@@ -70,14 +119,24 @@ export const EXPERIENCES: Experience[] = [
     ],
     projects: [
       {
-        name: "Real-time Monitoring Suite",
-        description: "Analytics platform for tracking infrastructure health in real-time.",
+        name: "Live Analytics Hub",
+        description: "Dashboard for visualizing gigabytes of incoming logs in real-time.",
         tech: ["RxJS", "Angular Material", "WebSockets"]
       },
       {
-        name: "Scalable E-commerce Storefront",
-        description: "Mobile-first storefront optimized for high-performance delivery.",
-        tech: ["Angular Universal", "Redux", "Jest"]
+        name: "E-commerce Optimization",
+        description: "SEO-focused migration to Angular Universal increasing conversion rates by 12%.",
+        tech: ["Angular Universal", "SSR", "V8 Optimization"]
+      },
+      {
+        name: "Customer Loyalty Engine",
+        description: "Gamified reward system with offline capability and service worker synchronization.",
+        tech: ["PWA", "Firebase", "Angular Service Workers"]
+      },
+      {
+        name: "Financial Data Pipeline",
+        description: "Secure, high-integrity financial report generator with complex validation logic.",
+        tech: ["Reactive Forms", "NgRx Store", "Jest"]
       }
     ]
   }
