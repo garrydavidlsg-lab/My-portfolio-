@@ -408,7 +408,7 @@ const Cat: React.FC<CatProps> = ({ color, initialX, initialY }) => {
         width: SIZE, 
         height: SIZE, 
         transform: isZoomed ? 'scale(1.25)' : 'scale(1)',
-        transition: 'left 0.1s linear, top 0.1s linear, transform 0.3s ease-out'
+        transition: 'transform 0.3s ease-out'
       }}
     >
       <div className="relative w-full h-full group">
