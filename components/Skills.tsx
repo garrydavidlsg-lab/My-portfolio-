@@ -1,14 +1,13 @@
-
 import React from 'react';
 import { SKILLS } from '../constants';
 import { Skill } from '../types';
 
 const Skills: React.FC = () => {
   const categories: Record<Skill['category'], string> = {
-    core: 'Engineering Core',
-    state: 'State Architecture',
-    testing: 'Quality Assurance',
-    other: 'Ecosystem & Tooling'
+    core: 'Core Engineering',
+    state: 'AI & Backend',
+    testing: 'Quality & Security',
+    other: 'Ecosystem'
   };
 
   const groupedSkills = SKILLS.reduce((acc, skill) => {
@@ -18,78 +17,78 @@ const Skills: React.FC = () => {
   }, {} as Record<Skill['category'], Skill[]>);
 
   return (
-    <section id="skills" className="py-32 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-600/5 blur-[100px] -z-10"></div>
-      
+    <section id="skills" className="py-32 relative overflow-hidden bg-[#030712]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-24">
-          <div className="max-w-2xl">
-            <h2 className="text-indigo-500 font-mono text-xs uppercase tracking-widest mb-4">Technical Expertise</h2>
-            <h3 className="text-4xl md:text-6xl font-black text-white heading-font tracking-tight">Systematic Mastery.</h3>
-            <p className="text-slate-400 mt-6 text-lg leading-relaxed font-light">
-              Deep specialized knowledge in building mission-critical frontend systems 
-              that balance performance, maintainability, and user experience.
-            </p>
+        <div className="flex flex-col md:flex-row items-end justify-between mb-20">
+          <div>
+            <h2 className="text-indigo-500 font-mono text-xs uppercase tracking-widest mb-4">Technical Proficiency</h2>
+            <h3 className="text-4xl md:text-6xl font-black text-white heading-font tracking-tight">System Capabilities.</h3>
+          </div>
+          <div className="hidden md:block">
+             <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
+               <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+               <span>All Systems Nominal</span>
+             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-8 space-y-20">
-            {(Object.keys(categories) as Array<Skill['category']>).map((catKey) => {
-              const skillsInCat = groupedSkills[catKey] || [];
-              if (skillsInCat.length === 0) return null;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {(Object.keys(categories) as Array<Skill['category']>).map((catKey, idx) => {
+            const skillsInCat = groupedSkills[catKey] || [];
+            if (skillsInCat.length === 0) return null;
 
-              return (
-                <div key={catKey} className="space-y-8">
-                  <div className="flex items-center gap-4">
-                    <h4 className="text-white font-bold text-sm uppercase tracking-[0.2em] opacity-40 shrink-0">
-                      {categories[catKey]}
-                    </h4>
-                    <div className="h-px w-full bg-white/5"></div>
+            return (
+              <div 
+                key={catKey} 
+                className={`p-8 rounded-[2rem] border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors group relative overflow-hidden ${
+                  idx === 0 ? 'md:col-span-2 md:row-span-2 bg-gradient-to-br from-indigo-900/10 to-transparent' : 'col-span-1'
+                }`}
+              >
+                {idx === 0 && (
+                  <div className="absolute top-0 right-0 p-8 opacity-20">
+                    <svg className="w-32 h-32 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
                   </div>
-                  <div className="flex flex-wrap gap-3">
-                    {skillsInCat.map((skill) => (
-                      <div 
-                        key={skill.name}
-                        className="px-5 py-3 glass-card rounded-xl border border-white/5 hover:border-indigo-500/40 hover:bg-white/5 transition-all group cursor-default"
-                      >
-                        <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors">
-                          {skill.name}
-                        </span>
-                      </div>
-                    ))}
+                )}
+                
+                <div className="flex items-center gap-3 mb-8">
+                  <div className={`w-10 h-10 rounded-2xl flex items-center justify-center ${idx === 0 ? 'bg-indigo-600 text-white' : 'bg-white/10 text-slate-400'}`}>
+                    <span className="font-bold text-sm">{idx + 1}</span>
                   </div>
+                  <h4 className="text-white font-bold uppercase tracking-wider text-sm">
+                    {categories[catKey]}
+                  </h4>
                 </div>
-              );
-            })}
-          </div>
 
-          <div className="lg:col-span-4">
-            <div className="p-10 bg-indigo-600/5 border border-indigo-500/20 rounded-3xl lg:sticky lg:top-24">
-              <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl shadow-indigo-600/30">
-                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
+                <div className={`grid ${idx === 0 ? 'grid-cols-2 gap-4' : 'grid-cols-1 gap-3'}`}>
+                  {skillsInCat.map((skill) => (
+                    <div 
+                      key={skill.name}
+                      className="flex items-center justify-between group/skill"
+                    >
+                      <span className="text-slate-400 text-sm font-medium group-hover/skill:text-white transition-colors">
+                        {skill.name}
+                      </span>
+                      {idx === 0 && (
+                        <div className="w-12 h-1 bg-white/10 rounded-full overflow-hidden">
+                          <div className="h-full bg-indigo-500 w-full"></div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h5 className="font-bold text-2xl text-white mb-6 heading-font">Architectural Vision</h5>
-              <p className="text-slate-400 text-base leading-relaxed mb-10">
-                "Modern architecture isn't just about components; it's about predictable data flow, modular boundaries, and engineering resilience against the entropy of enterprise development."
-              </p>
-              <div className="space-y-5">
-                {[
-                  'Declarative Reactive Patterns',
-                  'Predictable State Isolation',
-                  'Modular Core Boundaries',
-                  'Atomic Design Systems'
-                ].map(tag => (
-                  <div key={tag} className="flex items-center gap-4 text-sm text-slate-300 font-mono">
-                    <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full shadow-[0_0_8px_rgba(99,102,241,0.8)]"></span>
-                    {tag}
-                  </div>
-                ))}
-              </div>
-            </div>
+            );
+          })}
+          
+          {/* Architectural Vision Card */}
+          <div className="p-8 rounded-[2rem] border border-indigo-500/30 bg-indigo-600/5 md:col-span-2 lg:col-span-1 xl:col-span-2 flex flex-col justify-center relative overflow-hidden">
+            <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-indigo-500/20 rounded-full blur-[80px]"></div>
+            <h4 className="text-2xl font-bold text-white mb-4 heading-font relative z-10">Architectural Vision</h4>
+            <p className="text-slate-400 text-sm leading-relaxed relative z-10">
+              "Modern architecture isn't just about components; it's about predictable data flow, modular boundaries, and engineering resilience against the entropy of enterprise development."
+            </p>
           </div>
         </div>
       </div>

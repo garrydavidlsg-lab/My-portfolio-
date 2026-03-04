@@ -6,6 +6,7 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
+    { label: 'About', href: '#about', id: 'about' },
     { label: 'Engineering', href: '#skills', id: 'skills' },
     { label: 'Works', href: '#projects', id: 'projects' },
     { label: 'Timeline', href: '#experience', id: 'experience' }
@@ -26,7 +27,7 @@ const Navbar: React.FC = () => {
       });
     }, options);
 
-    const sections = ['hero', 'skills', 'projects', 'experience'];
+    const sections = ['hero', 'about', 'skills', 'projects', 'experience'];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
       <nav className="fixed top-0 left-0 w-full z-[100] bg-[#030712]/60 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#hero" className="text-xl font-bold flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-black transition-transform group-hover:rotate-12">G</div>
+            <div className="w-8 h-8 bg-indigo-600 rounded-xl flex items-center justify-center text-white text-sm font-black transition-transform group-hover:rotate-12">G</div>
             <span className="tracking-tight heading-font text-white uppercase">GARRY<span className="text-indigo-500">DAVID</span></span>
           </a>
 
@@ -100,7 +101,7 @@ const Navbar: React.FC = () => {
           <a
             href="#contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 px-6 py-4 bg-indigo-600 text-white rounded-xl font-bold text-center shadow-xl shadow-indigo-600/20"
+            className="mt-4 px-6 py-4 bg-indigo-600 text-white rounded-full font-bold text-center shadow-xl shadow-indigo-600/20"
           >
             Get In Touch
           </a>
